@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+    <link rel="stylesheet" href="css/settings.css">
+    <script src="scripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.1/d3.min.js" integrity="sha512-EJphfO0pq9xyT3qaHte1zam2S9a1PZ76oHBjayziMT+2lw/Y0NhkSVHS2rfl3t4UX/eyq/D6f9d2sjA6K9t/Kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="options">
+            <li class="profilepic">
+                <img src="images/donowall.gif" alt="Temp Pic" width="22" height="22">
+            </li>
+            <li class="home"><a href="index.html">Home</a></li>
+            <li class="create-poll"><a href="poll.html">Create Poll</a></li>
+            <li class="search"><a href="explore.html">Search</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <h1>Settings</h1>
+            <p>this will be improved later, especially the css. just a simple base for now</p>
+            <ul>
+                various privacy and notification settings will go here once theyre decided on.
+                <li>
+                    <label for="username">Change your username</label>
+                    <input id="username" name="username">
+                </li><!--prompt for current password when user starts typing-->
+                <li>
+                    <label for="email">Change your email</label>
+                    <input type="email" id="email" name="email">
+                </li><!--prompt for current password when user starts typing-->
+                <li>
+                    <label for="password">Change your password</label>
+                    <input type="password" id="password" name="password">
+                </li><!--prompt for current password when user starts typing-->
+                <li>
+                    <label for="darkmode">Enable Dark Mode</label>
+                    <input type="checkbox" id="darkmode" name="darkmode">
+                </li>
+                <li>
+                    <label for="submit">Apply changes</label>
+                    <input type="submit" id="submit">
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
