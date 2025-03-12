@@ -6,3 +6,29 @@ body{
     min-height: 100vh;
     background: black;
 }
+
+.custom-rounded {
+    border-radius: 30px; 
+  }
+
+  .custom-bg {
+    border-radius: 30px; /* Adjust the value for more/less rounding */
+    background:  rgba(200, 200, 200, 0.1);
+  }
+
+  .box{
+    height: auto;
+    width: 250px;
+    margin:auto;
+    justify-items: left;
+    padding: 10px;
+  }
+
+  .save{
+    margin-top: 30px;
+
+  }
+
+  h5{
+    color:red;
+  }
