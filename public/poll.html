@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/poll.css">
     <script src="scripts/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.1/d3.min.js" integrity="sha512-EJphfO0pq9xyT3qaHte1zam2S9a1PZ76oHBjayziMT+2lw/Y0NhkSVHS2rfl3t4UX/eyq/D6f9d2sjA6K9t/Kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -26,11 +27,32 @@
             <h2>Menu</h2>
         </div>
         <div class="main-content">
-            <h2>Create Poll</h2>
+            <div class="poll-create-container">
+                <h2>Create a Poll</h2>
+                <form id="pollForm">
+                    <label for="question">Poll Question:</label>
+                    <input type="text" id="question" name="question" placeholder="Enter your question" required>
+        
+                    <label for="option1">Option 1:</label>
+                    <input type="text" id="option1" name="option1" placeholder="Enter option 1" required>
+        
+                    <label for="option2">Option 2:</label>
+                    <input type="text" id="option2" name="option2" placeholder="Enter option 2" required>
+        
+                    <label for="option3">Option 3 (Optional):</label>
+                    <input type="text" id="option3" name="option3" placeholder="Enter option 3">
+        
+                    <label for="option4">Option 4 (Optional):</label>
+                    <input type="text" id="option4" name="option4" placeholder="Enter option 4">
+        
+                    <button type="button" onclick="submitPoll()">Create Poll</button>
+                </form>
+            </div>
         </div>
         <div class="user-content">
-            <h2>User Posts</h2>
+            <h2>Poll Options</h2>
         </div>
     </div>
+    <scrip src="scripts/createPoll.js"></script>
 </body>
 </html>
