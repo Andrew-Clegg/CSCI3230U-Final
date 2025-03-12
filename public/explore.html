@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Polls</title>
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/explore.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+          integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.1/d3.min.js"
+          integrity="sha512-EJphfO0pq9xyT3qaHte1zam2S9a1PZ76oHBjayziMT+2lw/Y0NhkSVHS2rfl3t4UX/eyq/D6f9d2sjA6K9t/Kg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/explore.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="options">
+      <li class="profilepic">
+        <img src="images/donowall.gif" alt="Temp Pic" width="22" height="22" />
+      </li>
+      <li class="home"><a href="index.html">Home</a></li>
+      <li class="create-poll"><a href="poll.html">Create Poll</a></li>
+      <li class="search"><a href="explore.html">Search</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Side Menu -->
+    <div class="menu">
+      <h2>Menu</h2>
+    </div>
+
+    <!-- Main Content: Explore / Search -->
+    <div class="main-content">
+      <h2>Explore Polls</h2>
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search polls..." 
+          aria-label="Search polls"
+        />
+        <button id="searchButton">Search</button>
+      </div>
+      <!-- Container for displaying search results -->
+      <div id="resultsContainer">
+   
+      </div>
+    </div>
+
+    <!-- Right Column (User Content) -->
+    <div class="user-content">
+      <h2>User Content</h2>
+
+    </div>
+  </div>
+</body>
+</html>
