@@ -5,6 +5,9 @@ body {
     background: black;
     color: white;
     font-family: Arial, sans-serif;
+    background-image: url('../../src/images/wallpaper.jpg');
+    background-size: cover; /* Ensures the image covers the entire body */
+    background-position: center; /* Centers the image */
 }
 
 .navbar {
@@ -81,5 +84,73 @@ body {
     }
 }
 
+.custom-border{
+  border: 2px solid rgb(137, 7, 7,0.7);
+}
+.custom-rounded {
+  border-radius: 30px; 
+}
 
+.custom-bg {
+  background:  rgba(35, 34, 34, 0.66);
+}
 
+.rect{
+  height: auto;
+  width: 250px;
+  margin:auto;
+  justify-items: left;
+  padding: 20px;
+  border: 10px solid rgba(0, 0, 0, 0.8); /* Set the border width */
+  border-radius: 30px; /* Rounded corners for the border */
+  border-width: 10px;
+  border-style: double;
+    /* border-image: linear-gradient(45deg, #47a9ff, #40e0d0) 1; */
+  background-color: rgba(53, 53, 53, 0.95);
+}
+
+.rect h1,h2,h6 {
+    color:white;
+}
+
+.rect > h6 {
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+
+.rect > input {
+  background-color:rgba(137, 7, 7,0.7);
+  border: 1px solid black;
+}
+
+.save{
+    margin-top: 30px;
+
+}
+
+h3{
+  color:rgb(137, 7, 7)
+}
+.rect h5{ /*For error messages */
+    color:red;
+}
+
+.custom-button{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f14668;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid transparent;
+  justify-content:center;
+  cursor:pointer;
+  border-radius: 9999px;
+
+  font-weight: bold;
+  color: white;
+}
+
+.custom-button:hover {
+  background: #f03a5f;
+}
