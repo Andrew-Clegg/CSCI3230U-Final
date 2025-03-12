@@ -1,6 +1,7 @@
 /**
  * 
  */
+let account_file = '../src/currentAccounts.csv'
 
 window.onload = function (){
   $('#login').on('click', openLogin)
@@ -15,20 +16,22 @@ function openLogin(error = ''){
    * @Params:
    *  error (string) - error message to display on false logins
    */
-  $('.box').empty();
+  $('.rect').empty();
   $('#Box').removeClass('is-hidden');
 
   let username = document.createElement('input');
   let password = document.createElement('input');
   let save = document.createElement('button');
   let error_msg = document.createElement('h5');
+
+  password.type = 'password';
   save.textContent = 'Login';
-  save.setAttribute('class','button is-info is-light is-rounded save');
+  save.setAttribute('class','custom-button save');
 
   if (error.length > 1){error_msg.textContent = error;} //Show error message
   
   //Build login input UI
-  $('.box')
+  $('.rect')
     .append(error_msg)
     .append('<h6>Enter Username:</h6>')
     .append(username)
@@ -39,7 +42,7 @@ function openLogin(error = ''){
     save.addEventListener('click',function(){ //Validate login info on click
       if (validateLogin(username.value, password.value)){
         //Navigate to home page.
-        console.log("Successfully logged in.");
+        alert('Login Successful!');
       }
 
       else{
@@ -73,7 +76,7 @@ function openSignUp(error = ''){
   /**Function to build sign up input section
    * @param error (string) - error message to display on false logins
    */
-  $('.box').empty();
+  $('.rect').empty();
   $('#Box').removeClass('is-hidden');
 
   let username = document.createElement('input');
@@ -82,13 +85,15 @@ function openSignUp(error = ''){
   let save = document.createElement('button');
   let error_msg = document.createElement('h5');
 
+  password.type = 'password';
+  confirm_password.type = 'password';
   save.textContent = 'Sign Up';
-  save.setAttribute('class','button is-info is-light is-rounded save');
+  save.setAttribute('class','custom-button save');
 
   if (error.length > 1){error_msg.textContent = error;} //Show error message
   
-  //Build login input UI
-  $('.box')
+  //Build sign up input UI
+  $('.rect')
     .append(error_msg)
     .append('<h6>Enter Username:</h6>')
     .append(username)
@@ -101,7 +106,7 @@ function openSignUp(error = ''){
     save.addEventListener('click',function(){ //Validate signup info on click
       if (validateSignUp(username.value, password.value, confirm_password.value)){
         //Navigate to home page.
-        console.log("Successfully created account.");
+        alert('Sign Up Successful!');
       }
 
       else{
@@ -137,6 +142,7 @@ function validateSignUp(user, pass, pass2){
       }
     }
     //Sign up is valid. Write to csv file
+ 
     return true;
   });
   
@@ -144,7 +150,7 @@ function validateSignUp(user, pass, pass2){
 
 async function readAccounts() {
   let accounts;
-  await d3.csv('../src/currentAccounts.csv')  
+  await d3.csv(account_file)  
     .then(data => {
       accounts = data;  
     })
