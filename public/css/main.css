@@ -54,7 +54,9 @@ body {
     width: 20%;
     background: #222;
     padding: 20px;
+    display: block;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .main-content {
@@ -71,6 +73,23 @@ body {
     box-sizing: border-box;
 }
 
+.menuItems a{
+    display: block;
+    padding: 10%;
+    text-align: left;
+}
+.fa-user-o{
+    padding: 2%;
+}
+.fa-bell-o{
+    padding: 2%;
+}
+.fa-bookmark-o{
+    padding: 2%;
+}
+.fa-envelope-o{
+    padding: 2%;
+}
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
