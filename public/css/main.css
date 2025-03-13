@@ -42,6 +42,17 @@ body {
 .options li a:hover {
     background-color: #555;
 }
+a {
+    padding: 60px;
+    text-decoration: none;
+    color: inherit; 
+    transition: background 0.3s ease;
+}
+a:hover {
+    background: rgba(255, 51, 51, 0.3);
+    border-radius: 5px;
+    padding: 3px 5px;
+}
 
 /* Layout Structure */
 .container {
@@ -72,6 +83,9 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
+.menuItems {
+    padding: 8%
+}
 
 .menuItems a{
     display: block;
@@ -90,6 +104,14 @@ body {
 .fa-envelope-o{
     padding: 2%;
 }
+
+.container {
+    display: flex;
+    height: calc(100vh - 50px); /* Subtract navbar height */
+    width: 100%;
+}
+
+
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;

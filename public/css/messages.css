@@ -13,6 +13,8 @@
     flex-grow: 1;
     overflow-y: auto;
     padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .message {
@@ -20,19 +22,31 @@
     margin: 5px;
     border-radius: 10px;
     max-width: 60%;
+    word-wrap: break-word;
+    cursor: pointer; /* Makes it clear that messages are clickable */
+    transition: opacity 0.2s;
 }
 
+/* Received messages (left side, gray) */
 .message.received {
     background: #444;
     align-self: flex-start;
+    color: white;
 }
 
+/* Sent messages (right side, red) */
 .message.sent {
-    background: #007bff;
+    background: #ff3333;
     color: white;
     align-self: flex-end;
 }
 
+/* Hover effect for deleting messages */
+.message:hover {
+    opacity: 0.6;
+}
+
+/* Message input box and send button */
 .message-input {
     display: flex;
     gap: 10px;
@@ -49,14 +63,20 @@
 }
 
 .message-input button {
-    background: #007bff;
+    background: #ff3333;
     border: none;
     padding: 10px;
     border-radius: 5px;
     color: white;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
+.message-input button:hover {
+    background: #cc0000;
+}
+
+/* Chat list styling */
 .chat-list {
     list-style: none;
     padding: 0;
@@ -73,3 +93,4 @@
 .chat-list li:hover {
     background: #555;
 }
+
