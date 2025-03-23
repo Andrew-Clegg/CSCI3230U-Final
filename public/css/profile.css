@@ -1,0 +1,75 @@
+form#profileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.file-upload {
+    align-items: start;
+}
+#profilePic {
+    display: none;
+}
+.choose-file-btn {
+    background: #ff3333;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    max-width: 200px;
+    text-align: center;
+}
+.choose-file-btn:hover {
+    background: #d92b2b;
+}
+#previewImg {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    border: 2px solid #555;
+}
+#profileForm input[type="text"],
+#profileForm input[type="email"],
+#profileForm input[type="password"],
+#profileForm textarea {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+}
+#saveProfileBtn {
+    background: #ff3333;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    max-width: 150px;
+}
+#saveProfileBtn:hover {
+    background: #d92b2b;
+}
+.user-polls {
+    margin-top: 30px;
+}
+#myPollsContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#myPollsContainer li {
+    background: #333;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}

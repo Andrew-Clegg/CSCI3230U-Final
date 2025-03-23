@@ -5,13 +5,20 @@ body {
     background: black;
     color: white;
     font-family: Arial, sans-serif;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
+    background-color: #0c0c0c;
     padding: 15px 20px;
     color: white;
     position: sticky;
@@ -40,30 +47,32 @@ body {
 }
 
 .options li a:hover {
-    background-color: #555;
+    background-color: #262626;
 }
+
 a {
     padding: 60px;
     text-decoration: none;
-    color: inherit; 
+    color: inherit;
     transition: background 0.3s ease;
 }
+
 a:hover {
-    background: rgba(255, 51, 51, 0.3);
+    background: rgba(245, 18, 18, 0.5);
     border-radius: 5px;
     padding: 3px 5px;
 }
 
-/* Layout Structure */
 .container {
     display: flex;
     height: calc(100vh - 50px);
     width: 100%;
+    overflow: hidden;
 }
 
 .menu {
     width: 20%;
-    background: #222;
+    background: #151515;
     padding: 20px;
     display: block;
     box-sizing: border-box;
@@ -75,52 +84,48 @@ a:hover {
     background: #111;
     padding: 20px;
     box-sizing: border-box;
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.main-content::-webkit-scrollbar {
+    display: none;
 }
 
 .user-content {
     width: 20%;
-    background: #222;
+    background: #151515;
     padding: 20px;
     box-sizing: border-box;
 }
+
 .menuItems {
-    padding: 8%
+    padding: 8%;
 }
 
-.menuItems a{
+.menuItems a {
     display: block;
     padding: 10%;
     text-align: left;
 }
-.fa-user-o{
-    padding: 2%;
-}
-.fa-bell-o{
-    padding: 2%;
-}
-.fa-bookmark-o{
-    padding: 2%;
-}
-.fa-envelope-o{
-    padding: 2%;
-}
 
-.container {
-    display: flex;
-    height: calc(100vh - 50px); /* Subtract navbar height */
-    width: 100%;
+.fa-user-o,
+.fa-bell-o,
+.fa-bookmark-o,
+.fa-envelope-o {
+    padding: 2%;
 }
-
 
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
+        height: auto;
+        overflow: visible;
     }
-
-    .menu, .main-content, .user-content {
+    .menu,
+    .main-content,
+    .user-content {
         width: 100%;
     }
 }
-
-
-

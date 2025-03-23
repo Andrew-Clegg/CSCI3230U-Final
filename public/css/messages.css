@@ -63,7 +63,7 @@
 }
 
 .message-input button {
-    background: #ff3333;
+    background: #ff80a2;
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -73,7 +73,7 @@
 }
 
 .message-input button:hover {
-    background: #cc0000;
+    background: #ff80a2;
 }
 
 /* Chat list styling */
