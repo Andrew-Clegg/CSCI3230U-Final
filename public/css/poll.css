@@ -38,12 +38,34 @@ button {
     font-size: 18px;
     border: none;
     border-radius: 5px;
-    background: #007bff;
+    background: #0c7226;
     color: white;
     cursor: pointer;
     margin-top: 15px;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #14c340;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.poll-create-container {
+    width: 50%;
+}
+
+.poll-preview {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: rgb(44, 44, 44);
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
 }

@@ -23,8 +23,25 @@
     </nav>
 
     <div class="container">
-        <div class="menu"> 
-            <h2>Menu</h2>
+        <div class="menu">
+            <div class = "menuItems">
+                <a href="profile.html">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    Profile
+                </a>
+                <a>
+                    <i class="fa fa-bell-o" aria-hidden="true"></i>
+                    Notifications
+                </a>
+                <a href="messages.html">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    Messages
+                </a>
+                <a>
+                    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                    Saved
+                </a>
+            </div>
         </div>
         <div class="main-content">
             <div class="poll-create-container">
@@ -49,8 +66,13 @@
                 </form>
             </div>
         </div>
-        <div class="user-content">
-            <h2>Poll Options</h2>
+    <!-- Poll Preview Section -->
+        <div class="poll-preview hidden" id="pollDisplay">
+            <h2>Poll Preview</h2>
+            <p id="pollQuestion"></p>
+            <div id="optionsContainer"></div>
+            <button onclick="submitVote()">Vote</button>
+            <div id="voteResults"></div>
         </div>
     </div>
     <script src="scripts/createPoll.js"></script>
