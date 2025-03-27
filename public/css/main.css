@@ -5,7 +5,8 @@ body {
     background: black;
     color: white;
     font-family: Arial, sans-serif;
-    overflow-y: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
