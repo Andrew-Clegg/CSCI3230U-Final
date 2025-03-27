@@ -47,6 +47,15 @@
         <div class="main-content">
             <div class="poll-create-container">
                 <h2>Create a Poll</h2>
+
+                <div class="checkbox-container">
+                    <h3>Poll options:</h3>
+                    <label>
+                        <input type="checkbox" id="multiSelectToggle">
+                        Allow multiple answers 
+                    </label>                    
+                </div>
+
                 <form id="pollForm">
                     <label for="question">Poll Question:</label>
                     <input type="text" id="question" name="question" placeholder="Enter your question" required>
@@ -69,7 +78,7 @@
         </div>
     <!-- Poll Preview Section -->
         <div class="poll-preview hidden" id="pollDisplay">
-            <h2>Poll Preview</h2>
+            <h2>Poll Preview:</h2>
             <p id="pollQuestion"></p>
             <div id="optionsContainer"></div>
             <button onclick="submitVote()">Vote</button>

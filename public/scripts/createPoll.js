@@ -1,11 +1,10 @@
-
-// Function to create and display the poll
 function submitPoll() {
     let question = document.getElementById("question").value;
     let option1 = document.getElementById("option1").value;
     let option2 = document.getElementById("option2").value;
     let option3 = document.getElementById("option3").value;
     let option4 = document.getElementById("option4").value;
+    let allowMultiple = document.getElementById("multiSelectToggle").checked;
 
     if (question.trim() === "" || option1.trim() === "" || option2.trim() === "") {
         alert("Please enter at least a question and two options.");
@@ -15,16 +14,15 @@ function submitPoll() {
     let pollData = {
         question,
         options: [option1, option2, option3, option4].filter(opt => opt),
-        votes: {}
+        votes: {},
+        allowMultiple
     };
 
-    // Initialize votes with zero
     pollData.options.forEach(option => {
         pollData.votes[option] = 0;
     });
 
     localStorage.setItem("poll", JSON.stringify(pollData));
-
     displayPoll();
 }
 
@@ -46,48 +44,58 @@ function displayPoll() {
         optionElement.innerText = option;
         optionElement.setAttribute("data-value", option);
 
-        optionElement.onclick = function() {
-            document.querySelectorAll(".option").forEach(el => el.classList.remove("selected"));
-            optionElement.classList.add("selected");
+        optionElement.onclick = function () {
+            if (pollData.allowMultiple) {
+                // Toggle selection in multiple-choice mode
+                optionElement.classList.toggle("selected");
+            } else {
+                // Deselect others and select only one in single-choice mode
+                document.querySelectorAll(".option").forEach(el => el.classList.remove("selected"));
+                optionElement.classList.add("selected");
+            }
         };
 
         optionsContainer.appendChild(optionElement);
 
+        // Display results dynamically
         let resultElement = document.createElement("p");
         resultElement.id = `result-${option}`;
         resultElement.innerText = `${option}: ${pollData.votes[option]} votes`;
         voteResults.appendChild(resultElement);
     });
 
-    // Make the poll preview visible
     document.getElementById("pollDisplay").classList.remove("hidden");
 }
 
-
-// Function to submit vote
 function submitVote() {
-    let selectedOption = document.querySelector(".option.selected");
+    let selectedOptions = document.querySelectorAll(".option.selected");
 
-    if (!selectedOption) {
-        alert("Please select an option before submitting.");
+    if (selectedOptions.length === 0) {
+        alert("Please select at least one option before submitting.");
         return;
     }
 
     let pollData = JSON.parse(localStorage.getItem("poll"));
-    let optionValue = selectedOption.getAttribute("data-value");
 
-    // Increment vote count
-    pollData.votes[optionValue] += 1;
+    selectedOptions.forEach(optionElement => {
+        let optionValue = optionElement.getAttribute("data-value");
+        pollData.votes[optionValue] += 1;
+    });
+
     localStorage.setItem("poll", JSON.stringify(pollData));
+
+    // Disable vote button after submission
+    let voteButton = document.getElementById("voteButton");
+    if (voteButton) {
+        voteButton.disabled = true;
+        voteButton.innerText = "Vote Submitted";
+    }
 
     updateVoteResults();
 }
 
-// Function to update vote results dynamically
 function updateVoteResults() {
     let pollData = JSON.parse(localStorage.getItem("poll"));
-    if (!pollData) return;
-
     pollData.options.forEach(option => {
         let resultElement = document.getElementById(`result-${option}`);
         if (resultElement) {
@@ -96,5 +104,5 @@ function updateVoteResults() {
     });
 }
 
-// Load poll if it exists on page load
+// Load poll on page load
 document.addEventListener("DOMContentLoaded", displayPoll);

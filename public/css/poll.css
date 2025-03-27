@@ -1,3 +1,4 @@
+/* Poll Creation Container */
 .poll-create-container {
     max-width: 400px;
     margin: auto;
@@ -7,7 +8,7 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the form elements */
+    align-items: center;
 }
 
 form {
@@ -20,16 +21,19 @@ label {
     text-align: left;
     width: 100%;
     font-weight: bold;
+    color: white; /* Ensuring text is readable in dark mode */
     margin-top: 10px;
 }
 
 input {
-    width: calc(100% - 20px); /* Ensures proper width inside the container */
+    width: calc(100% - 20px);
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ddd;
+    border: 1px solid #555; /* Darker border for dark mode */
     border-radius: 5px;
     margin-top: 5px;
+    background: #333;
+    color: white;
 }
 
 button {
@@ -38,14 +42,14 @@ button {
     font-size: 18px;
     border: none;
     border-radius: 5px;
-    background: #0c7226;
+    background: #d63b3e;
     color: white;
     cursor: pointer;
     margin-top: 15px;
 }
 
 button:hover {
-    background: #14c340;
+    background: #f55457;
 }
 
 .main-content {
@@ -58,14 +62,128 @@ button:hover {
     width: 50%;
 }
 
+/* Poll Preview Section */
 .poll-preview {
     width: 45%;
     padding: 20px;
     border: 1px solid #ccc;
     background: rgb(44, 44, 44);
     border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
+/* Hide poll preview initially */
 .hidden {
     display: none;
 }
+
+/* Style for the poll question */
+#pollQuestion {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Ensuring readability */
+    margin-bottom: 15px;
+}
+
+/* Poll Options */
+.option {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    background-color: #726666;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.option:hover {
+    background-color: #d29191;
+    transform: scale(1.05);
+}
+
+/* Selected option style */
+.option.selected {
+    background-color: #d63b3e;
+    color: white;
+    font-weight: bold;
+}
+
+/* Multiple Choice Checkboxes */
+.option input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+/* Style for the vote button */
+#voteButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#voteButton:hover {
+    background-color: #0056b3;
+}
+
+/* Style for vote results */
+#voteResults {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Checkbox Label Styling */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+}
+
+/* Centering the "Allow multiple answers" checkbox */
+/* Add border above and below the checkbox container */
+/* Add border above and below the checkbox container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    background: #222; /* Slightly darker for contrast */
+    padding: 10px;
+    border-top: 3px solid #d63b3e;  /* Thicker red border */
+    border-bottom: 3px solid #d63b3e; /* Thicker red border */
+    width: 100%; /* Stretch across the form */
+    text-align: center;
+}
+
+/* Add spacing to separate from other elements */
+.checkbox-container + * {
+    margin-top: 10px;
+}
+
+/* Style for the checkbox */
+#multiSelectToggle {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #d63b3e; /* Red checkbox */
+}
+
+/* Style for the checkbox label */
+.checkbox-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
